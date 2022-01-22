@@ -1,0 +1,192 @@
+//====================================================================================================
+.home {
+    height: calc(100vh - 75px);
+    width: 100%;
+    @media (max-height: 600px){
+        height: 100%;
+    }
+    @media (max-width: $md3+px){
+        height: 100%;
+    }
+}
+.home__slider{
+    position: relative;
+}
+.slider-item {
+    display: none;
+    background: url('../img/home/bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    &.active{
+        display:block;
+    }
+    @media (max-height: 600px){
+        padding: 35px 0 60px;
+    }
+    @media (max-width: $md3+px){
+        padding: 35px 0 60px;
+    }
+}
+.slider-item__inner {
+    @include flexbox();
+    position: relative;
+    flex-direction: column;
+    height: calc(94vh - 75px);
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    @media (max-height: 600px) {
+        justify-content: flex-start;
+    }
+    @media (max-height: 600px ) and (min-width: 600px ){
+        justify-content: center;
+    }
+    @media (max-width: $md2+px) and (max-height: 600px){
+        height: 100%;
+    }
+}
+.slider-item__suptitle {
+    color: #bb9c66;
+	font-family: 'ceremonious_one';
+    font-size: 40px;
+    line-height: 25px;
+    margin-bottom: 23px;
+    @media (max-width: $md2+px) {
+        font-size: 30px;
+    }
+    @media (max-width: $md3+px) {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    @media (max-height: 600px) {
+        font-size: 28px;
+        margin-bottom: 8px;
+        line-height: 18px;
+    }
+}
+.slider-item__title {
+    color: #fff;
+	font-family: 'pfdintextcondpro-regular';
+    font-size: 35px;
+    line-height: 35px;
+    text-transform: uppercase;
+    letter-spacing: 5.25px;
+    margin: 0 auto 27px;
+    @media (max-width: $md2+px) {
+        font-size: 27px;
+        margin-bottom: 22px;
+    }
+    @media (max-width: $md3+px) {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    @media (max-height: 600px) {
+        font-size: 22px;
+        margin-bottom: 12px;
+        line-height: 26px;
+    }
+}
+.slider-item__text {
+    color: #fff;
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 58px;
+    max-width: 688px;
+    @media (max-width: $md2+px) {
+        padding: 0 15px;
+        margin-bottom: 45px;
+    }
+    @media (max-width: $md3+px) {
+        margin-bottom: 15px;
+	}
+}
+.slider-item__btn {
+    display: inline-block;
+    width: 250px;
+    height: 50px;
+    color: #fff;
+    font-family: 'Idealist Sans';
+    font-size: 15px;
+    line-height: 43px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 3px solid #bb9c66;
+    margin: 0 auto;
+    transition: 0.3s linear;
+    &:hover{
+        background-color: #bb9c66;
+    }
+}
+.slider-buttons {
+    width: 100px;
+    height: 100px;
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../img/home/bg_btn100x100.png"); 
+    @media (max-width: $md3+px) {
+        background: url("../img/home/bg_btn75x75.png"); 
+        width: 75px;
+        height: 75px;
+        bottom: -38px;
+        left: 50%;
+    }
+}
+.slider-btn__left {
+    span{
+        display: inline-block;
+         width: 12px;
+         height: 12px;
+         border: 1px solid;
+         border-color: #bb9c66 #bb9c66 transparent transparent;
+         transform: rotate(-135deg);
+         margin-right: 5px;
+         cursor: pointer;
+         @media (max-width: $md3+px) {
+            margin-right: 0;
+        }
+    } 
+}
+.slider-btn__anim {
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(to left,#bc9e68,#fdfbfa);
+    span{
+        display: inline-block;
+        background: #fff;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+    }
+    animation: rotateCircle 1s linear infinite;
+}
+@keyframes rotateCircle{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.slider-btn__right {
+    span{
+        display: inline-block;
+         width: 12px;
+         height: 12px;
+         border: 1px solid;
+         border-color: #bb9c66 #bb9c66 transparent transparent;
+         transform: rotate(45deg);
+         margin-left: 5px;
+         cursor: pointer;
+         @media (max-width: $md3+px) {
+            margin-left: 0;
+        }
+    } 
+}
+//====================================================================================================
